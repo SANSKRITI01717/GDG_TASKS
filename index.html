@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngelList – Build, Lead, Invest</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: white;
+            --tw-bg-opacity: 1;
+            background-color: rgb(0 29 33 / var(--tw-bg-opacity));
+        }
+
+        .main {
+            width: 100%;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 60px;
+            border-bottom: 1px solid #e5e5e5;
+            background: #fff;
+            color: #000;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+
+        .navbar ul li:first-child {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .navbar ul li:nth-child(2) div {
+            display: flex;
+            gap: 40px;
+        }
+
+        .navbar ul li:nth-child(2) p {
+            font-size: 15px;
+        }
+
+        .navbar ul li:nth-child(2) a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .navbar ul li:last-child {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar button {
+            padding: 10px 24px;
+            border: 1px solid #000;
+            background: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        .navbar button:last-child {
+            background: #000;
+        }
+
+        .navbar button:last-child a {
+            color: #fff;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #000;
+        }
+
+
+        .part1 {
+            padding: 200px 60px 80px;
+            color: #9b99ff;
+
+        }
+
+        .part1 .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #053611;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 30px;
+        }
+
+        .part1 .tag::before {
+            content: "VENTURE CAPITAL PLATFORM";
+        }
+
+        .part1 .bigfont {
+            font-size: 72px;
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .part1 .smallfont {
+            font-size: 20px;
+
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .part1 .btn button {
+            padding: 16px 40px;
+            background: #ffffff;
+
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .part1 .btn a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .part2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 80px 60px;
+
+        }
+
+        .part2 .box .line {
+            height: 1px;
+            width: 265px;
+            background-color: #ffffff;
+        }
+
+        .part2 .box {
+
+            padding: 15px 10px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .part2 h2 {
+            font-size: 17px;
+
+            margin-bottom: 20px;
+            height: 50px;
+        }
+
+        .part2 img {
+            height: 420px;
+            width: 270px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            object-fit: cover;
+
+        }
+
+        .part2 .box img :hover {
+            transform: scale(1.05);
+
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+
+        .part2 .discription {
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+        .part2 .discription::before {
+            content: "Comprehensive back-office support for venture funds and syndicates.";
+        }
+
+        .part2 .box:nth-child(2) .discription::before {
+            content: "Tools and services to manage your LP relationships and investments.";
+        }
+
+        .part2 .box:nth-child(3) .discription::before {
+            content: "Banking solutions built specifically for venture capital firms.";
+        }
+
+        .part2 .box:nth-child(4) .discription::before {
+            content: "Market intelligence and portfolio analytics for better decisions.";
+        }
+
+        /* Part 3 - Logos */
+        .part3 {
+            padding: 80px 60px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .part3 h1 {
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .part3 h1::before {
+            content: "Trusted by leading investors";
+        }
+
+        .part3 .line {
+            height: 75px;
+            width: 1px;
+            background-color: #e5e5e5;
+            display: inline-block;
+            margin: 0 15px;
+            color: #9b99ff;
+        }
+
+        .part3 span {
+            display: inline-block;
+            width: 150px;
+            height: 60px;
+            margin: 0 30px;
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        .part3 .tag {
+            margin-top: 50px;
+            display: inline-block;
+            padding: 8px 16px;
+
+            background-color: rgb(0, 41, 47);
+            color: #9b99ff;
+            border-radius: 25px;
+            font-size: 14px;
+        }
+
+
+
+        /* Part 4 */
+        .part4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            color: rgb(84, 74, 46);
+            padding: 100px 60px;
+            background: #CDEED3;
+
+        }
+
+        .part4 h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .part4 h3 {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: rgb(84, 74, 46);
+            margin-bottom: 30px;
+        }
+
+        .part4 a {
+            color: rgb(84, 74, 46);
+            text-decoration: underline;
+            font-size: 16px;
+        }
+
+        .part4 .image {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+
+
+        /* Part 5 */
+        .part5 {
+            background-color: #755b28;
+            color: #ede4d2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .part5 button {
+            padding: 6px 12px;
+            background: #ede4d2;;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        .part5 .b2 {
+            display: flex-inline;
+            justify-content: center;
+            padding: 80px 60px;
+        }
+
+        .part5 .b1 {
+            display: flex-inline;
+            justify-content: center;
+            padding: 80px 60px;
+        }
+
+        .part5 .verybig {
+            font-size: 100px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            
+        }
+
+        .part5 .bigfont {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .part5 img{
+            margin: 12px;
+        }
+
+        .part5 .scroll h1 {
+            font-size: 70px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            padding: 12px;
+        }
+
+        .part5 .box {
+            display: flex;
+        }
+
+        .part5 .half {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Big Image */
+
+        .bigimg {
+            height: 500px;
+            background-image: url('https://images.unsplash.com/5/unsplash-kitsune-4.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: rgb(0, 0, 0);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+        .bigimg h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .bigimg h2 {
+            font-size: 24px;
+            font-weight: 400;
+            max-width: 800px;
+            line-height: 1.4;
+        }
+
+
+
+        /* Part 6 - Articles */
+        .part6 {
+            padding: 100px 60px;
+        }
+
+        .part6:first-of-type h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .part6:first-of-type .bigfont {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .part6:first-of-type {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .part6:first-of-type>h2,
+        .part6:first-of-type>.bigfont {
+            grid-column: span 4;
+        }
+
+        .part6 .box .img {
+            height: 220px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .part6 .box button {
+            padding: 6px 12px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .part6 .box button::before {
+            content: "INSIGHTS";
+        }
+
+        .part6 .box h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .part6 .box h1::before {
+            content: "How to scale your venture fund";
+        }
+
+        .part6 .box h4 {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666;
+        }
+
+        .part6 .box h4::before {
+            content: "Essential strategies for fund managers looking to grow.";
+        }
+
+        /* Footer */
+        .part6 {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            color: black;
+        }
+
+        .part6 .imgbox {
+            display: flex;
+            gap: 20px;
+        }
+
+        .part6 img {
+            width: 300px;
+            height: 200px;
+            border-radius: 7px;
+            object-fit: cover;
+        }
+
+        .part6 button {
+            padding: 6px 12px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 15px;
+
+        }
+
+        /* Part 7 - Footer Links */
+        .part7 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            padding: 80px 60px;
+            background: white;
+            color: black;
+        }
+
+        .part7 .box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .part7 .box h1 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .part7 .box a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .part7 .box a::before {
+            content: "Link Item";
+        }
+
+        .part7 .box a:hover {
+            color: #000;
+        }
+
+        .part7 .box:first-child {
+            gap: 20px;
+        }
+
+        .part7 .box:first-child .button {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .part7 .box:first-child button {
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .part7 .box:first-child button a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .part7 .box:first-child button:hover {
+            background: #e5e5e5;
+        }
+
+        .narrowline {
+            height: 1px;
+            background: #333;
+            margin: 0 60px;
+        }
+
+        .main>div:last-child {
+            padding: 40px 60px;
+            font-size: 11px;
+            color: #666;
+            line-height: 1.6;
+            background: #000;
+        }
+
+        /* RESPONSIVE MEDIA QUERIES */
+        
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .navbar {
+                padding: 20px 30px;
+            }
+
+            .navbar ul li:nth-child(2) div {
+                gap: 20px;
+            }
+
+            .part1 {
+                padding: 150px 30px 60px;
+            }
+
+            .part1 .bigfont {
+                font-size: 56px;
+            }
+
+            .part2 {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 60px 30px;
+                gap: 40px;
+            }
+
+            .part2 .box .line {
+                width: 100%;
+            }
+
+            .part2 img {
+                width: 100%;
+                height: auto;
+                max-height: 400px;
+            }
+
+            .part3 {
+                padding: 60px 30px;
+            }
+
+            .part3 h1 {
+                font-size: 28px;
+            }
+
+            .part3 span {
+                margin: 0 15px;
+            }
+
+            .part4 {
+                padding: 80px 30px;
+                gap: 40px;
+            }
+
+            .part5 {
+                flex-direction: column;
+            }
+
+            .part5 .b1, .part5 .b2 {
+                padding: 60px 30px;
+            }
+
+            .part5 .verybig {
+                font-size: 70px;
+            }
+
+            .part5 .bigfont {
+                font-size: 36px;
+            }
+
+            .part5 .scroll h1 {
+                font-size: 50px;
+            }
+
+            .part6 {
+                padding: 80px 30px;
+            }
+
+            .part6:first-of-type {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .part6 .imgbox {
+                flex-wrap: wrap;
+            }
+
+            .part6 img {
+                width: 100%;
+            }
+
+            .narrowline {
+                margin: 0 30px;
+            }
+
+            .main>div:last-child {
+                padding: 40px 30px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .navbar ul {
+                flex-wrap: wrap;
+            }
+
+            .navbar ul li:nth-child(2) div {
+                display: none;
+            }
+
+            .navbar ul li:last-child {
+                gap: 10px;
+            }
+
+            .navbar button {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .part1 {
+                padding: 120px 20px 40px;
+                text-align: center;
+            }
+
+            .part1 .bigfont {
+                font-size: 36px;
+                letter-spacing: -1px;
+            }
+
+            .part1 .smallfont {
+                font-size: 16px;
+            }
+
+            .part2 {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+                gap: 30px;
+            }
+
+            .part3 {
+                padding: 40px 20px;
+            }
+
+            .part3 h1 {
+                font-size: 24px;
+            }
+
+            .part3 div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .part3 .line {
+                height: 40px;
+                margin: 10px 0;
+            }
+
+            .part3 span {
+                margin: 10px 0;
+            }
+
+            .part4 {
+                grid-template-columns: 1fr;
+                padding: 60px 20px;
+                gap: 30px;
+            }
+
+            .part4 h1 {
+                font-size: 24px;
+            }
+
+            .part4 h3 {
+                font-size: 16px;
+            }
+
+            .part4 .image {
+                grid-template-columns: 1fr;
+            }
+
+            .part5 {
+                flex-direction: column;
+            }
+
+            .part5 .b1, .part5 .b2 {
+                padding: 40px 20px;
+            }
+
+            .part5 .verybig {
+                font-size: 48px;
+            }
+
+            .part5 .bigfont {
+                font-size: 28px;
+            }
+
+            .part5 .scroll h1 {
+                font-size: 36px;
+                padding: 8px;
+            }
+
+            .part5 .box {
+                flex-direction: column;
+            }
+
+            .part5 img {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .bigimg {
+                height: auto;
+                padding: 40px 20px;
+                min-height: 300px;
+            }
+
+            .bigimg h1 {
+                font-size: 24px;
+            }
+
+            .bigimg h2 {
+                font-size: 18px;
+            }
+
+            .part6 {
+                padding: 60px 20px;
+            }
+
+            .part6:first-of-type {
+                grid-template-columns: 1fr;
+            }
+
+            .part6:first-of-type .bigfont {
+                font-size: 32px;
+            }
+
+            .part6 .imgbox {
+                flex-direction: column;
+            }
+
+            .narrowline {
+                margin: 0 20px;
+            }
+
+            .main>div:last-child {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <ul>
+                <li>AngelList</li>
+                <li>
+                    <div>
+                        <p><a href="">Product</a></p>
+                        <p><a href="">Solutions</a></p>
+                        <p><a href="">Pricing</a></p>
+                        <p><a href="">Resources</a></p>
+                    </div>
+                </li>
+                <li>
+                    <button><a href="">Sign In</a></button>
+                    <button><a href="">Contact Sales</a></button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="part1">
+            <div class="tag"></div>
+            <div class="bigfont">Built to scale all private funds</div>
+            <div class="smallfont">AngelList provides investors and innovators with the tools to grow.</div>
+            <div class="btn">
+                <button><a href="">Contact Sales</a></button>
+            </div>
+        </div>
+
+        <div class="part2">
+            <div class="box">
+                <div class="line"></div>
+                <div class="heading"></div>
+                <h2>Fund Administration</h2>
+                <div class="image">
+                    <img src="4 of 1.webp" alt="">
+                </div>
+                <div class="discription"></div>
+            </div>
+            <div class="box">
+                <div class="line"></div>
+                <div class="heading"></div>
+                <h2>Investor Services</h2>
+                <div class="image">
+                    <img src="4 of 2.webp" alt="">
+                </div>
+                <div class="discription"></div>
+            </div>
+            <div class="box">
+                <div class="line"></div>
+                <div class="heading"></div>
+                <h2>Banking</h2>
+                <div class="image">
+                    <img src="4 of 3.webp" alt="">
+                </div>
+                <div class="discription"></div>
+            </div>
+            <div class="box">
+                <div class="line"></div>
+                <div class="heading"></div>
+                <h2>Data & Insights</h2>
+                <div class="image">
+                    <img src="4 of 4.webp" alt="">
+                </div>
+                <div class="discription"></div>
+            </div>
+        </div>
+
+        <div class="part3">
+            <h1>Better together. AngelList partners with industry leaders.</h1>
+            <div>
+                <span><img src="icon1.svg" alt=""></span>
+                <div class="line"></div>
+                <span><img src="icon2.svg" alt=""></span>
+                <div class="line"></div>
+                <span><img src="icon3.svg" alt=""></span>
+                <div class="line"></div>
+                <span><img src="icon4.svg" alt=""></span>
+                <div class="line"></div>
+                <span><img src="icon5.svg" alt=""></span>
+            </div>
+            <div class="tag">
+                <div>Our premier partnership program assembles top professionals to deliver comprehensive</div>
+                <div>expertise&nbsp;&amp; support</div>
+            </div>
+        </div>
+
+        <div class="part4">
+            <div>
+                <h1>Full Service Fund Management</h1>
+                <h3>AngelList's full service offerings provides access to 50+ services that remove friction from fund
+                    management for venture funds, rolling funds, and syndicates</h3>
+                <a href="">Explore our funds & syndicates services →</a>
+            </div>
+            <div class="image">
+                <img src="full-service.webp" alt="">
+            </div>
+        </div>
+
+        <div class="part5">
+            <div class="b2">
+                <div class="box1">
+                    <h2>By the numbers</h2>
+                    <div class="bigfont">Fueling innovation</div>
+                    <p>With more than half of all top-tier VC deals run through the platform, AngelList is at the heart
+                        of venture investing. This exposure gives AngelList the insight to identify gaps in the VC
+                        market and build the solutions that bridge them.</p>
+                </div>
+
+                <div class="box1">
+                    <div><img src="1 pic.webp" alt=""></div>
+                    <p>The State of U.S. Early-Stage Venture & Startups: H1'25</p>
+                    <button>Data</button>
+                </div>
+            </div>
+            <div class="b1">
+                <div class="box">
+                    <div class="verybig">$171B</div>
+                    <h2>Assets on platform</h2>
+                </div>
+                <div class="box">
+                    <div class="half">
+                        <div class="scroll">
+                            <h1>21k+</h1>
+                            <p>Funds and syndicates</p>
+                        </div>
+                        <div class="scroll">
+                            <h1>72k+</h1>
+                            <p>Funds and syndicates</p>
+                        </div>
+                    </div>
+                    <div class="half">
+                        <div class="scroll">
+                            <h1>215b+</h1>
+                            <p>Funds and syndicates</p>
+                        </div>
+                        <div class="scroll">
+                            <h1>215k+</h1>
+                            <p>Funds and syndicates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bigimg">
+            <h1>Testimonials</h1>
+            <h2>One of AngelList's biggest benefits is its all-in-one software-first approach to admin, legal and tax
+                services.
+                Cindy Bi, GP, CapitalX</h2>
+        </div>
+
+        <div class="part6">
+            <h2>Resources</h2>
+            <div class="bigfont">Latest articles</div>
+            <div class="imgbox">
+                <div class="box">
+                    <div class="img">
+                        <img src="41 of 1.webp" alt="">
+                    </div>
+                    <button>working at Anglelist</button>
+                    <h1></h1>
+                    <h4></h4>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="41 of 2.webp" alt="">
+                    </div>
+                    <button>Case Study</button>
+                    <h1></h1>
+                    <h4></h4>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="41 of 3.webp" alt="">
+                    </div>
+                    <button>Case Study</button>
+                    <h1></h1>
+                    <h4></h4>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="41 of 4.webp" alt="">
+                    </div>
+                    <button>Case Study</button>
+                    <h1></h1>
+                    <h4></h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="part7">
+            <div class="box">
+                <h1>AngelList</h1>
+                <div class="button">
+                    <button><a href="">Contact</a></button>
+                    <button><a href="">Sign In</a></button>
+                </div>
+            </div>
+            <div class="box">
+                <h1>Products</h1>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+            </div>
+            <div class="box">
+                <h1>Products</h1>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+            </div>
+            <div class="box">
+                <h1>Products</h1>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+            </div>
+            <div class="box">
+                <h1>Products</h1>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+                <a href="make your choice"></a>
+            </div>
+        </div>
+
+        <div class="narrowline"></div>
+
+        <div>Disclaimer: The information contained herein is provided for informational and discussion purposes only and
+            is not intended to be a recommendation for any investment, service, product, or other advice of any kind,
+            and shall not constitute or imply an offer of any kind. Any investment opportunities and/or products or
+            services shown here will only be completed pursuant to formal offering materials, a letter of intent, and/or
+            any other agreements as determined by AngelList containing full details regarding risks, minimum investment,
+            fees, and expenses of such transaction.</div>
+    </div>
+</body>
+
+</html>
